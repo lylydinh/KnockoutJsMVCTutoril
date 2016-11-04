@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Basic";
+}
+
+<h2>heloo: <span data-bind="text: name"></span></h2>
+
+@section scripts{
+    <script>
+        function ViewModel(){
+            this.name = "thuy d5";
+        };
+        var viewmodel =new  ViewModel();
+        ko.applyBindings(viewmodel);
+    </script>
+}

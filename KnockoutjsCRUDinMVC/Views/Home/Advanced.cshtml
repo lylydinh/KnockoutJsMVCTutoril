@@ -1,0 +1,21 @@
+﻿@model KnockoutjsCRUDinMVC.Models.Person
+@{
+    ViewBag.Title = "Advanced";
+}
+
+<h2>helloo: <span data-bind="text: getname()"></span></h2>
+
+@section scripts{
+    <script>
+
+        function ViewModel(firstname, lastname) {
+            var self = this;
+            self.name = firstname + ' ' + lastname;
+            self.getname = function () {
+                return self.name;
+            };
+        };
+        var viewmodel=new ViewModel('@Model.FirstName','@Model.LastName');
+        ko.applyBindings(viewmodel);
+    </script>
+}
